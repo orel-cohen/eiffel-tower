@@ -7,15 +7,17 @@ import { Divider, Grid } from '@mui/material';
 function App() {
   return (
     <div className="App">
-      <Grid container spacing={0.5} >
+      <Grid container >
         <Grid item xs={12} className="ContentAndHeader">
           <Header />
           <Content />
         </Grid>
         <Grid item xs={12}>
-          <Divider className="Divider" />     
+          <Divider className="Divider" />
         </Grid>
-        <Footer />
+        <Grid container spacing={1}>
+          <Footer />
+        </Grid>
       </Grid>
     </div>
 
