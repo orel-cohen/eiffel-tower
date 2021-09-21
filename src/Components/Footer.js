@@ -4,7 +4,7 @@ import { Grid } from '@mui/material';
 
 function Footer() {
     return (
-        <>
+        <React.Fragment>
             <Grid item>
                 <BaseStatusCard />
             </Grid>
@@ -25,7 +25,7 @@ function Footer() {
             </Grid>
 
 
-        </>
+        </React.Fragment>
     );
 }
 
