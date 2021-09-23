@@ -1,32 +1,70 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 
-import { Header, Content, Footer } from "./Components"
+import { HeaderGrid, ContentGrid, FooterGrid, WeatherInfoGrid } from "./Components"
 import './App.css';
-import { Divider, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
+import axios from 'axios';
+
 
 function App() {
-  return (
-    <div className="App">
+  const isTest = false;
+  const [entity, setEntity] = useState()
+
+  useEffect(() => {
+    axios.get('BaseStatusArr.json')
+      .then(response => {
+        // console.log("--> " + JSON.stringify(response.data))
+        setEntity(JSON.parse(JSON.stringify(response.data)))
+        // console.log(entity);
+      })
+  },[entity])
+
+  if (isTest) {
+    return (
       <Grid container
-        direction="column"
-        alignItems="stretch">
-
-        <Grid item container
-          xs={12}
-          className="ContentAndHeader">
-          <Header />
-          <Content />
-        </Grid>
-
-        <Grid container spacing={1}>
-          <Divider className="Divider" />
-          <Footer />
-        </Grid>
-
+        direction="row-reverse"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <WeatherInfoGrid />
       </Grid>
-    </div>
-
-  );
+    );
+  } else {
+    return (
+      <Grid container spacing={2} className="App">
+        <HeaderGrid className='ContentAndHeader' />
+        <ContentGrid 
+        className='ContentAndHeader' 
+        entity={entity}/>
+        <FooterGrid />
+      </Grid>
+    );
+  }
 }
 
 export default App;
+
+
+// header and content
+{/* <Grid container spacing={3}
+            direction="column"
+            alignItems="stretch"
+            className="ContentAndHeader">
+
+            <Header />
+            <Content />
+
+          </Grid> */}
+
+// footer
+{/* <Grid container spacing={2}>
+            <Grid item>
+              <Divider className="Divider" />
+            </Grid>
+            <Grid container item
+              justifyContent='space-evenly'
+            >
+              <Footer />
+
+            </Grid>
+          </Grid> */}

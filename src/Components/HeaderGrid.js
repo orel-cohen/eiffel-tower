@@ -5,7 +5,7 @@ import { FirstLight, LastLight } from '.';
 import {logo} from '../Assets'
 
 
-function Header() {
+function HeaderGrid() {
     return (
         <Grid container item className="HeaderBox">
             <Grid item xs={0.35}>
@@ -24,4 +24,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default HeaderGrid;

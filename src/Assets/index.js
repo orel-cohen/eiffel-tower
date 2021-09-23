@@ -7,6 +7,7 @@ export {default as loweringDevices} from './lowering_devices.png';
 export {default as usabilityRoutes} from './usability_routes.png';
 export {default as weatherInfo} from './weather_info.png';
 export {default as fieldStatus} from './field_status.png';
+export {default as devicesCloudIcon} from './devices_cloud_icon.png';
 
 
 
