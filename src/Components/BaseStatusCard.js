@@ -9,7 +9,7 @@ function BaseStatusCard(props) {
     return (
         <Paper className="BaseStatusCard">
             <img src={baseIcon}/>
-            <Typography></Typography>
+            <Typography fontFamily='Heebo'>שם בסיס</Typography>
         </Paper>
     );
 }

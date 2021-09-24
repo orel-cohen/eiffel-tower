@@ -1,13 +1,17 @@
 import * as React from 'react';
 import '../App.css';
 import { Typography, Grid } from '@mui/material';
-import { LoweringDevicePaper } from '.';
+import { LoweringDevice } from '.';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import { loweringDevices } from "../Assets";
 
 
-
+/**
+ * Represent status of lowering devices in entity
+ * @param {Entity} props 
+ * @returns 
+ */
 function LoweringDevicesGrid(props) {
     return (
         <Grid item container
@@ -27,21 +31,21 @@ function LoweringDevicesGrid(props) {
             <Grid container
                 direction="row-reverse"
                 justifyContent="space-around"
-                alignItems="center"
+                alignItems="stretch"
             >
-                <LoweringDevicePaper
+                <LoweringDevice
                     icon={<CheckCircleIcon color="success" />}
                     title="GCA" />
-                <LoweringDevicePaper
+                <LoweringDevice
                     icon={<CheckCircleIcon color="success" />}
                     title="VOR" />
-                <LoweringDevicePaper
+                <LoweringDevice
                     icon={<CancelIcon color="error" />}
                     title="ILS" />
-                <LoweringDevicePaper
+                <LoweringDevice
                     icon={<CancelIcon color="disabled" />}
                     title="TACAN" />
-                <LoweringDevicePaper
+                <LoweringDevice
                     icon={<CancelIcon color="error" />}
                     title="DME" />
             </Grid>

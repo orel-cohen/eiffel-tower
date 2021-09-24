@@ -22,7 +22,7 @@ function FieldStatusGrid(props) {
 
             <Grid container
                 direction="row-reverse"
-                justifyContent="space-around"
+                justifyContent="space-between"
                 alignItems="flex-start">
 
                 <Grid item

@@ -1,22 +1,30 @@
 import { Paper } from '@material-ui/core';
 import { Typography, Grid } from '@mui/material';
 import * as React from 'react';
-import { usabilityRoutes } from '../Assets' 
+import { usabilityRoutes } from '../Assets'
 import '../App.css';
+import { RoutesInfo } from ".";
 
-
+/**
+ * 
+ * @param {*} props 
+ * @returns 
+ */
 function UsabilityRoutesGrid(props) {
     return (
-        <Grid item container
+        <Grid container item
+            spacing={2}
             xs={7}
             direction="row-reverse"
             justifyContent="flex-start"
             alignItems="center">
 
-            <Grid container
+            <Grid container item
+                spacing={2}
                 direction="row-reverse"
                 justifyContent="flex-start"
                 alignItems="center">
+
                 <img src={usabilityRoutes} alt="usabilityRoutes" />
                 <Typography fontSize={30} fontFamily='Heebo'>שמישות מסלולים</Typography >
             </Grid>
@@ -24,32 +32,15 @@ function UsabilityRoutesGrid(props) {
 
 
 
-            <Grid container
-                direction="column"
-                justifyContent="space-around"
+            <Grid container item
+                spacing={2}
                 alignItems="stretch"
-                style={{ direction: 'rtl', padding: 10 }}>
-                <Paper fontFamily='Heebo'
-                    style={{
-                        width: 1005,
-                        height: 43
-                    }}>
-                    03L/21R
-                    </Paper>
-                <Paper fontFamily='Heebo'
-                    style={{
-                        width: 1005,
-                        height: 43
-                    }}>
-                    03R/21L
-                    </Paper >
-                <Paper fontFamily='Heebo'
-                    style={{
-                        width: 1005,
-                        height: 43
-                    }}>
-                    03Z/21Z
-                    </Paper>
+            >
+
+                <RoutesInfo />
+                <RoutesInfo />
+                <RoutesInfo />
+
             </Grid>
         </Grid>
     );

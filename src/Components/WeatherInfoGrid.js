@@ -51,12 +51,12 @@ function WeatherInfoGrid(props) {
                     <Grid item>
                         <DrawnInfo
                             icon={devicesCloudIcon}
-                            info={"j"} />
+                            info={entity.weatherStatus.temperature + '°'} />
                     </Grid>
                     <Grid item>
                         <DrawnInfo
                             icon={devicesCloudIcon}
-                            info={"d"}
+                            info={entity.weatherStatus.visibility}
                         />
                     </Grid>
                     <Grid item>

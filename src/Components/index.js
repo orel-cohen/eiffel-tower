@@ -11,12 +11,24 @@ export {default as LoweringDevicesGrid} from './LoweringDevicesGrid';
 export {default as UsabilityRoutesGrid} from './UsabilityRoutesGrid';
 
 
-// General components
-export {default as BaseStatusCard} from './BaseStatusCard';
+// ---------------------------------------------- General components by grid --------------------------
+
+// HeaderGrid
 export {default as LastLight} from './LastLight';
 export {default as FirstLight} from './FirstLight';
+
+// FooterGrid
+export {default as BaseStatusCard} from './BaseStatusCard';
+
+// LoweringDevicesGrid
+export {default as LoweringDevice} from './LoweringDevice';
+
+// UsabilityRoutesGrid
+export {default as RoutesInfo} from './RoutesInfo';
+
+
 export {default as DrawnInfo} from './DrawnInfo';
-export {default as LoweringDevicePaper} from './LoweringDevicePaper';
+
 
 
 
