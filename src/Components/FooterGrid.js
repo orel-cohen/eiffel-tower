@@ -12,13 +12,12 @@ function Footer() {
 
     })
     return (
-        <Grid container spacing={2}>
+        <Grid container item spacing={2}>
             <Grid item>
                 <Divider className="Divider" />
             </Grid>
             <Grid container item
                 justifyContent='space-evenly'>
-                <React.Fragment>
                     {/* <Grid item> */}
                     <BaseStatusCard />
                     <BaseStatusCard />
@@ -42,7 +41,6 @@ function Footer() {
                     {/* </Grid> */}
 
 
-                </React.Fragment>
             </Grid>
         </Grid>
 

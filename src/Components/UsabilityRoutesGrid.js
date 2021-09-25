@@ -14,7 +14,7 @@ function UsabilityRoutesGrid(props) {
     return (
         <Grid container item
             spacing={2}
-            xs={7}
+            xs={6}
             direction="row-reverse"
             justifyContent="flex-start"
             alignItems="center">

@@ -17,7 +17,7 @@ function App() {
         setEntity(JSON.parse(JSON.stringify(response.data)))
         // console.log(entity);
       })
-  },[entity])
+  }, [entity])
 
   if (isTest) {
     return (
@@ -31,11 +31,18 @@ function App() {
     );
   } else {
     return (
-      <Grid container spacing={2} className="App">
-        <HeaderGrid className='ContentAndHeader' />
-        <ContentGrid 
-        className='ContentAndHeader' 
-        entity={entity}/>
+      <Grid
+        container
+        spacing={2}
+        className="App"
+        direction="column"
+      >
+        <HeaderGrid
+          className='ContentAndHeader' />
+        <ContentGrid
+          className='ContentAndHeader'
+          entity={entity} />
+
         <FooterGrid />
       </Grid>
     );

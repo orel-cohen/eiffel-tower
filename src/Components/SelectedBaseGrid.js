@@ -9,14 +9,19 @@ import '../App.css';
 function SelectedBaseGrid(props) {
     return (
         <Grid item container
-            xs={12}
+            spacing={2}
             direction="row-reverse" // ltr/up to down is default
             justifyContent="flex-start" // where to locate the group
             alignItems="center">
-
-            <img src={baseIcon} alt="BaseIcon" />
-            <Typography fontSize={30} fontFamily='Heebo'>בח"א 10</Typography >
-            <img src={editIcon} alt="EditIcon" />
+            <Grid item>
+                <img src={baseIcon} alt="BaseIcon" />
+            </Grid>
+            <Grid item>
+                <Typography fontSize={30} fontFamily='Heebo'>בח"א 10</Typography >
+            </Grid>
+            <Grid item>
+                <img src={editIcon} alt="EditIcon" />
+            </Grid>
 
         </Grid>
     );

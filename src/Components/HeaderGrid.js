@@ -2,22 +2,33 @@ import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import '../App.css';
 import { FirstLight, LastLight } from '.';
-import {logo} from '../Assets'
+import { logo } from '../Assets'
 
-
-function HeaderGrid() {
+/**
+ * Represent the Header bar in the application,
+ * contain the logo and generic data
+ * @param {Entity for first/last light} props 
+ * @returns 
+ * @todo - for the first/last light use in <DrawnInfo/> comp
+ */
+function HeaderGrid(props) {
     return (
-        <Grid container item className="HeaderBox">
-            <Grid item xs={0.35}>
+        <Grid
+            container item
+            direction="row"
+            alignItems="center"
+            className="HeaderBox">
+
+            {/* @todo - organize in 2 grids */}
+            <Grid item>
                 <FirstLight />
             </Grid>
-            <Grid item xs={0.35}>
+            <Grid item>
                 <LastLight />
             </Grid>
-            <Grid xs={5}>
-                {/** Empty Grid */}
-            </Grid>
-            <Grid xs={6}>
+            {/* <Grid item>
+            </Grid> */}
+            <Grid item>
                 <img src={logo} alt="logo" className="Logo" />
             </Grid>
         </Grid>

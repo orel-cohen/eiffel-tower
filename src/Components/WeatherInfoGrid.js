@@ -30,7 +30,7 @@ function WeatherInfoGrid(props) {
 
         return (
             <Grid item container
-                xs={7}
+                xs={6}
                 direction="row-reverse"
                 justifyContent="flex-start"
                 alignItems="center">
