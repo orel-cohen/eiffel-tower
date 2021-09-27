@@ -6,13 +6,17 @@ import '../App.css';
 
 function DrawnInfo(props) {
     return (
-        <Grid container
-
+        <Grid container item
+            spacing={2}
             direction={props.direction ? props.direction : "column"}
-            justifyContent="space-around"
+            // justifyContent="space-around"
             alignItems="center">
+                <Grid item>
 
             <img src={props.icon} alt={props.icon} />
+                </Grid>
+                <Grid item>
+
             <Typography
                 align='center'
                 style={props.infoStyle}
@@ -20,6 +24,7 @@ function DrawnInfo(props) {
 
                 {props.info ? props.info : "-"}
             </Typography>
+                </Grid>
 
         </Grid>
         // <div>

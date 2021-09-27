@@ -1,51 +1,53 @@
 import React, { useEffect, useState } from 'react';
 import BaseStatusCard from "./BaseStatusCard";
-import { Divider, Grid } from '@mui/material';
+import { Divider, Grid, Typography } from '@mui/material';
+import axios from 'axios';
 
 
-
+/**
+ * Represent the footer of the application, 
+ * Designed to display other bases with their weather data 
+ * @param {} props - Consider to pass in props the current selected base
+ * @returns 
+ */
 function Footer() {
-    const [icons, setIcons] = useState([])
+    const [entities, setEntities] = useState([])
 
     useEffect(() => {
-        // <CheckCircleIcon color="success" />
+        axios.get('BasesStatusWeather.json')
+            .then(response => {
+                setEntities(response.data.data.baseStatus)
+            })
+    }, [])
 
-    })
-    return (
-        <Grid container item spacing={2}>
-            <Grid item>
-                <Divider className="Divider" />
+
+
+    if (entities.length != 0) {
+        return (
+            <Grid container item spacing={4}
+            >
+                <Grid item>
+                    <Divider className="Divider" />
+                </Grid>
+                <Grid container item
+                    direction='row-reverse'
+                    justifyContent='space-evenly'>
+                    {entities.map(ent => (
+                        <BaseStatusCard entity={ent} />
+                    ))}
+                </Grid>
             </Grid>
-            <Grid container item
-                justifyContent='space-evenly'>
-                    {/* <Grid item> */}
-                    <BaseStatusCard />
-                    <BaseStatusCard />
-                    <BaseStatusCard />
-                    <BaseStatusCard />
-                    {/* </Grid> */}
-                    {/* <Grid item> */}
-                    <BaseStatusCard />
-                    {/* </Grid> */}
-                    {/* <Grid item> */}
-                    <BaseStatusCard />
-                    {/* </Grid> */}
-                    {/* <Grid item> */}
-                    <BaseStatusCard />
-                    {/* </Grid> */}
-                    {/* <Grid item> */}
-                    <BaseStatusCard />
-                    {/* </Grid> */}
-                    {/* <Grid item> */}
-                    <BaseStatusCard />
-                    {/* </Grid> */}
-
-
+        );
+    } else {
+        return (
+            <Grid container item spacing={4}>
+                <Typography>Loading</Typography>
             </Grid>
-        </Grid>
 
 
-    );
+        );
+    }
+
 }
 
 export default Footer;

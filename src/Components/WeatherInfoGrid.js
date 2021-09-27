@@ -3,8 +3,9 @@ import { Typography, Grid, Divider } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { weatherInfo, devicesCloudIcon } from "../Assets";
 import React, { useEffect, useState } from 'react';
-import { DrawnInfo } from '.';
+import { DrawnInfo, DividerItem } from '.';
 import '../App.css';
+import PartialWeatherStatus from './PartialWeatherStatus';
 
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -15,12 +16,41 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
     fontFamily: 'Heebo'
 }));
+
+/**
+ * Represent the meteorological info from entity
+ * @param {Entity} props 
+ * @returns 
+ */
 function WeatherInfoGrid(props) {
     const [entity, setEntity] = useState(props.entity)
+    // const [cloudCover, setCloudCover] = useState()
+    // const [cloudBase, setCloudBase] = useState()
+    // const [cloudCeiling, setCloudCeiling] = useState()
+    // const [visibility, setVisibility] = useState()
+    // const [windDirection, setWindDirection] = useState()
+    // const [windStrength, setWindStrength] = useState()
+    const [temperature, setTemperature] = useState()
+    const [humidity, setHumidity] = useState()
+    const [inchPressure, setInchPressure] = useState()
+    const [milibarPressure, setMilibarPressure] = useState()
+
 
     useEffect(() => {
         if (props.entity) {
             setEntity(props.entity);
+            // setCloudCover(props.entity.weatherStatus.cloudCover.hebrewValue)
+            // setCloudBase(props.entity.weatherStatus.cloudBase)
+            // setCloudCeiling(props.entity.weatherStatus.cloudCeiling)
+            // setVisibility(props.entity.weatherStatus.visibility)
+            // setWindDirection(props.entity.weatherStatus.windDirection)
+            // setWindStrength(props.entity.weatherStatus.windStrength)
+            setTemperature(props.entity.weatherStatus.temperature)
+            setHumidity(props.entity.weatherStatus.humidity)
+            setInchPressure(props.entity.barometricPressureData.inchPressure)
+            setMilibarPressure(props.entity.barometricPressureData.milibarPressure)
+
+
         } else {
             console.log("not load");
         }
@@ -36,7 +66,7 @@ function WeatherInfoGrid(props) {
                 alignItems="center">
 
 
-                <Grid container
+                <Grid container item
                     direction="row-reverse"
                     justifyContent="flex-start"
                     alignItems="center">
@@ -44,89 +74,68 @@ function WeatherInfoGrid(props) {
                     <Typography fontSize={30} fontFamily='Heebo'>נתונים מטראולוגים</Typography >
                 </Grid>
 
-                <Grid container
+                <Grid container item
                     direction="row-reverse"
                     justifyContent="space-around"
-                    alignItems="center">
-                    <Grid item>
-                        <DrawnInfo
-                            icon={devicesCloudIcon}
-                            info={entity.weatherStatus.temperature + '°'} />
-                    </Grid>
-                    <Grid item>
-                        <DrawnInfo
-                            icon={devicesCloudIcon}
-                            info={entity.weatherStatus.visibility}
-                        />
-                    </Grid>
-                    <Grid item>
-                        <DrawnInfo
-                            icon={devicesCloudIcon}
-                            info='כיוון הרוח' />
-                    </Grid>
-                    <Grid item>
-                        <DrawnInfo
-                            icon={devicesCloudIcon}
-                            info='ראות' />
-                    </Grid>
-                    <Grid item>
-                        <Divider style={{
-                            background: '#70707080',
-                            opacity: 1,
-                            width: 1,
-                            height: 100
-                        }} />
-                    </Grid>
-                    <Grid item>
-                        <DrawnInfo
-                            icon={devicesCloudIcon}
-                            info='מעלות' />
-                    </Grid>
-                    <Grid item>
-                        <DrawnInfo
-                            icon={devicesCloudIcon}
-                            info='לחות' />
-                    </Grid>
-                    <Grid item>
-                        <Divider style={{
-                            background: '#70707080',
-                            opacity: 1,
-                            width: 1,
-                            height: 100
-                        }} />
-                    </Grid>
-                    <Grid item>
+                    alignItems="stretch">
 
+                    <PartialWeatherStatus entity={props.entity} />
+                    <DividerItem orientation='vertical' className={"BigVerticalDivider"}/>
+
+                    {/* <Grid item>
+                        <Divider style={{
+                            background: '#70707080',
+                            opacity: 1,
+                            width: 1,
+                            height: 100
+                        }} />
+                    </Grid> */}
+
+                    <Grid item>
                         <DrawnInfo
                             icon={devicesCloudIcon}
-                            info='58%' />
+                            info={temperature + '°'} />
                     </Grid>
-                    {/* <Item>כיוון הרוח</Item>
-                    <Item>ראות</Item>
-                    <Divider />
-                    <Item>מעלות</Item>
-                    <Item>לחות</Item>
-                    <Divider />
-                    <Item>משו לא ברור</Item> */}
+                    <Grid item>
+                        <DrawnInfo
+                            icon={devicesCloudIcon}
+                            info={humidity + "%"} />
+                    </Grid>
+                    <Grid item>
+                        <Divider style={{
+                            background: '#70707080',
+                            opacity: 1,
+                            width: 1,
+                            height: 100
+                        }} />
+                    </Grid>
+                    <Grid item>
+                        <DrawnInfo
+                            icon={devicesCloudIcon}
+                            info={inchPressure} />
+                    </Grid>
+                    <Grid item>
+                        <DrawnInfo
+                            icon={devicesCloudIcon}
+                            info={milibarPressure} />
+                    </Grid>
+
 
                 </Grid>
 
             </Grid>
-            // <div>
-            //     <DrawnInfo
-            //     icon={devicesCloudIcon}
-            //     info='25'/>
-            //     <DrawnInfo
-            //     icon={devicesCloudIcon}
-            //     info='58%'/>
-            //     <DrawnInfo
-            //     icon={devicesCloudIcon}
-            //     info='25`'/>
-            // </div>
+
         );
     } else {
         return (
-            <Typography>Loading</Typography>
+            <Grid item
+                xs={6}
+                direction="row-reverse"
+                justifyContent="flex-start"
+                alignItems="center">
+                <Typography>Loading</Typography>
+            </Grid>
+
         )
     }
 }

@@ -12,7 +12,7 @@ import CancelIcon from '@mui/icons-material/Cancel';
  * @returns 
  * @todo Parse entity from props to useState member and set info in comp
  */
-function RoutesInfo(props) {
+function RouteInfo(props) {
     return (
         <Grid container item
             direction="row-reverse"
@@ -29,4 +29,4 @@ function RoutesInfo(props) {
     );
 }
 
-export default RoutesInfo;
+export default RouteInfo;

@@ -13,23 +13,11 @@ function App() {
   useEffect(() => {
     axios.get('BaseStatusArr.json')
       .then(response => {
-        // console.log("--> " + JSON.stringify(response.data))
-        setEntity(JSON.parse(JSON.stringify(response.data)))
-        // console.log(entity);
+        // in case of request specific entity
+        setEntity(response.data.data.baseStatus[0])
       })
-  }, [entity])
+  }, [])
 
-  if (isTest) {
-    return (
-      <Grid container
-        direction="row-reverse"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <WeatherInfoGrid />
-      </Grid>
-    );
-  } else {
     return (
       <Grid
         container
@@ -43,35 +31,9 @@ function App() {
           className='ContentAndHeader'
           entity={entity} />
 
-        <FooterGrid />
+        <FooterGrid entity={entity} />
       </Grid>
     );
-  }
 }
 
 export default App;
-
-
-// header and content
-{/* <Grid container spacing={3}
-            direction="column"
-            alignItems="stretch"
-            className="ContentAndHeader">
-
-            <Header />
-            <Content />
-
-          </Grid> */}
-
-// footer
-{/* <Grid container spacing={2}>
-            <Grid item>
-              <Divider className="Divider" />
-            </Grid>
-            <Grid container item
-              justifyContent='space-evenly'
-            >
-              <Footer />
-
-            </Grid>
-          </Grid> */}

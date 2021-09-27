@@ -3,7 +3,11 @@ import '../App.css';
 import { Typography, Grid } from '@mui/material';
 import { fieldStatus, devicesCloudIcon } from '../Assets';
 
-
+/**
+ * 
+ * @param {Entity} props 
+ * @returns 
+ */
 function FieldStatusGrid(props) {
     return (
         <Grid item container

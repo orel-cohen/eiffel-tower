@@ -3,7 +3,7 @@ import * as React from 'react';
 import "../App.css";
 import "../Fonts.css";
 import Paper from '@mui/material/Paper';
-import { FieldStatusGrid, LoweringDevicesGrid, SelectedBaseGrid, UsabilityRoutesGrid, WeatherInfoGrid } from '.';
+import { DividerItem, FieldStatusGrid, LoweringDevicesGrid, SelectedBaseGrid, UsabilityRoutesGrid, WeatherInfoGrid } from '.';
 
 
 /**
@@ -16,50 +16,29 @@ function ContentGrid(props) {
     React.useEffect(() => {
         // console.log("content-->");
         // console.log(props.entity);
-    })
+    },[props.entity])
     return (
         <Grid container item
             spacing={3}
             direction="row-reverse"
             justifyContent="center"
-            alignItems="center">
+            alignItems="stretch">
             
             <SelectedBaseGrid />
-            <FieldStatusGrid />
+            <FieldStatusGrid entity={props.entity}/>
 
-            <Grid item xs={1}>
-                <Divider style={{
-                    background: '#70707080',
-                    opacity: 1,
-                    width: 1,
-                    height: 230
-                }} />
-            </Grid>
+           <DividerItem orientation='vertical' className={"BigVerticalDivider"}/>
 
-            <WeatherInfoGrid
-                entity={props.entity}/>
+            <WeatherInfoGrid entity={props.entity}/>
 
-            <Grid item>
-                <Divider style={{
-                    background: '#70707080',
-                    opacity: 1,
-                    width: 1700,
-                    height: 0.5,
-                }} />
-            </Grid>
+            <DividerItem xs={10} orientation='horizontal' className={"BigVerticalDivider"}/>
 
-            <LoweringDevicesGrid />
+            <LoweringDevicesGrid entity={props.entity}/>
 
-            <Grid item xs={1}>
-                <Divider style={{
-                    background: '#70707080',
-                    opacity: 1,
-                    width: 1,
-                    height: 230
-                }} />
-            </Grid>
+            <DividerItem orientation='vertical' className={"BigVerticalDivider"}/>
 
-            <UsabilityRoutesGrid />
+
+            <UsabilityRoutesGrid entity={props.entity}/>
 
         </Grid >
 

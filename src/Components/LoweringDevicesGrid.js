@@ -1,9 +1,7 @@
-import * as React from 'react';
+import React, {useState, useEffect} from 'react';
 import '../App.css';
 import { Typography, Grid } from '@mui/material';
 import { LoweringDevice } from '.';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import CancelIcon from '@mui/icons-material/Cancel';
 import { loweringDevices } from "../Assets";
 
 
@@ -13,52 +11,79 @@ import { loweringDevices } from "../Assets";
  * @returns 
  */
 function LoweringDevicesGrid(props) {
-    return (
-        <Grid item container
-            xs={3}
-            direction="row-reverse"
-            justifyContent="flex-start"
-            alignItems="center">
+    const [entity, setEntity] = useState(props.entity)
+    const [gcaUsability, setGcaUsability] = useState()
+    const [ilsUsability, setIlsUsability] = useState()
+    const [tacanUsability, setTacanUsability] = useState()
+    const [vorUsability, setVorUsability] = useState()
+    const [ndbUsability, setNdbUsability] = useState()
 
-            <Grid container
+
+
+    useEffect(() => {
+        console.log(props);
+        if (props.entity) {
+            setEntity(props.entity);
+            setGcaUsability(props.entity.gcaUsability.hebrewValue)
+            setIlsUsability(props.entity.ilsUsability.hebrewValue)
+            setTacanUsability(props.entity.tacanUsability.hebrewValue)
+            setVorUsability(props.entity.vorUsability.hebrewValue)
+            setNdbUsability(props.entity.ndbUsability.hebrewValue)
+        } else {
+            console.log("not load");
+        }
+    })
+
+    
+    if (entity) {
+        return (
+            <Grid item container
+                xs={3}
                 direction="row-reverse"
                 justifyContent="flex-start"
                 alignItems="center">
-                <img src={loweringDevices} alt="loweringDevices" />
-                <Typography fontSize={30} fontFamily='Heebo'>מכשירי הנמכה</Typography >
+    
+                <Grid container
+                    direction="row-reverse"
+                    justifyContent="flex-start"
+                    alignItems="center">
+                    <img src={loweringDevices} alt="loweringDevices" />
+                    <Typography fontSize={30} fontFamily='Heebo'>מכשירי הנמכה</Typography >
+                </Grid>
+    
+                <Grid container
+                    direction="row-reverse"
+                    justifyContent="space-around"
+                    alignItems="stretch"
+                >
+                    <LoweringDevice
+                        usability={gcaUsability}
+                        title="GCA" />
+                    <LoweringDevice
+                        usability={vorUsability}
+                        title="VOR" />
+                    <LoweringDevice
+                        usability={ilsUsability}
+                        title="ILS" />
+                    <LoweringDevice
+                        usability={tacanUsability}
+                        title="TACAN" />
+                    <LoweringDevice
+                        usability={ndbUsability}
+                        title="NDB" />
+                </Grid>
+    
             </Grid>
-
-            <Grid container
-                direction="row-reverse"
-                justifyContent="space-around"
-                alignItems="stretch"
-            >
-                <LoweringDevice
-                    icon={<CheckCircleIcon color="success" />}
-                    title="GCA" />
-                <LoweringDevice
-                    icon={<CheckCircleIcon color="success" />}
-                    title="VOR" />
-                <LoweringDevice
-                    icon={<CancelIcon color="error" />}
-                    title="ILS" />
-                <LoweringDevice
-                    icon={<CancelIcon color="disabled" />}
-                    title="TACAN" />
-                <LoweringDevice
-                    icon={<CancelIcon color="error" />}
-                    title="DME" />
-            </Grid>
-
-        </Grid>
-        // style={{justifyContent: 'space-around', alignItems: 'center'}}
-        // <Paper 
-        // elevation={3}
-        // style={{height: 147, width: 100}}>
-        //     {props.icon}
-        //     <Typography>{props.title}</Typography>
-        // </Paper>
-    );
+            );
+    } else {
+        return(
+            <Typography>
+                load
+            </Typography>
+        );
+    }
+    
+    
 }
 
 export default LoweringDevicesGrid;

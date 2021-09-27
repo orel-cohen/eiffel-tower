@@ -3,11 +3,11 @@ import { Typography, Grid } from '@mui/material';
 import * as React from 'react';
 import { usabilityRoutes } from '../Assets'
 import '../App.css';
-import { RoutesInfo } from ".";
+import { RouteInfo } from ".";
 
 /**
  * 
- * @param {*} props 
+ * @param {Entity} props 
  * @returns 
  */
 function UsabilityRoutesGrid(props) {
@@ -37,9 +37,9 @@ function UsabilityRoutesGrid(props) {
                 alignItems="stretch"
             >
 
-                <RoutesInfo />
-                <RoutesInfo />
-                <RoutesInfo />
+                <RouteInfo />
+                <RouteInfo />
+                <RouteInfo />
 
             </Grid>
         </Grid>
