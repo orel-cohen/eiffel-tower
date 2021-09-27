@@ -11,20 +11,20 @@ function DrawnInfo(props) {
             direction={props.direction ? props.direction : "column"}
             // justifyContent="space-around"
             alignItems="center">
-                <Grid item>
+            <Grid item>
 
-            <img src={props.icon} alt={props.icon} />
-                </Grid>
-                <Grid item>
+                <img src={props.icon} alt={props.icon} />
+            </Grid>
+            <Grid item>
 
-            <Typography
-                align='center'
-                style={props.infoStyle}
+                <Typography
+                    align='center'
+                    style={props.infoStyle}
                 >
 
-                {props.info ? props.info : "-"}
-            </Typography>
-                </Grid>
+                    {props.info ? props.info : "-"}
+                </Typography>
+            </Grid>
 
         </Grid>
         // <div>
