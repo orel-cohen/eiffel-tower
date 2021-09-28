@@ -3,16 +3,21 @@ import { Typography, Grid } from '@mui/material';
 import * as React from 'react';
 import '../App.css';
 import { baseIcon, editIcon, loweringDevices, usabilityRoutes, weatherInfo, fieldStatus, devicesCloudIcon } from '../Assets'
-import { PartialWeatherStatus } from ".";
+import { DividerItem, PartialWeatherStatus } from ".";
 
-
+/**
+ * 
+ * @param {*} props 
+ * @returns 
+ * @author Orel Cohen
+ */
 function BaseStatusCard(props) {
     console.log(props);
     return (
         <Grid item>
-            <Paper >
+            <Paper style={{}}>
                 <Grid container item
-                spacing={2}
+                    spacing={2}
                     direction="column"
                     justifyContent="space-around"
                     alignItems="center">
@@ -29,6 +34,7 @@ function BaseStatusCard(props) {
                     <Grid item>
                         <PartialWeatherStatus entity={props.entity} isFooter={true} />
                     </Grid>
+                        {/* <DividerItem className="Divider" /> */}
 
                 </Grid>
 

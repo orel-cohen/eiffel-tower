@@ -150,6 +150,256 @@
                     "inchPressure": 2988,
                     "milibarPressure": 101185
                 }
+            },
+            {
+                "inChargeComplex": {
+                    "complexName": "1שם הבסיס"
+                },
+                "sefigaComment": null,
+                "lastUpdateTime": "זמן עדכון1",
+                "manatBarzelNumber": null,
+                "baseReadiness": {
+                    "hebrewValue": null
+                },
+                "gcaUsability": {
+                    "hebrewValue": "אין",
+                    "code": 4
+                },
+                "ilsUsability": {
+                    "hebrewValue": "שמיש",
+                    "code": 1
+                },
+                "tacanUsability": {
+                    "hebrewValue": "מוגבל",
+                    "code": 2
+                },
+                "vorUsability": {
+                    "hebrewValue": "לא שמיש",
+                    "code": 3
+                },
+                "ndbUsability": {
+                    "hebrewValue": "אין",
+                    "code": 4
+                },
+                "weatherStatus": {
+                    "cloudCover": {
+                        "hebrewValue": "0/8"
+                    },
+                    "cloudBase": null,
+                    "cloudCeiling": null,
+                    "visibility": 10000,
+                    "windDirection": 220,
+                    "windStrength": 15,
+                    "temperature": 17,
+                    "humidity": 47,
+                    "weatherStatus": {
+                        "hebrewValue": "ראיה"
+                    }
+                },
+                "barometricPressureData": {
+                    "inchPressure": 2988,
+                    "milibarPressure": 101185
+                }
+            },
+            {
+                "inChargeComplex": {
+                    "complexName": "1שם הבסיס"
+                },
+                "sefigaComment": null,
+                "lastUpdateTime": "זמן עדכון1",
+                "manatBarzelNumber": null,
+                "baseReadiness": {
+                    "hebrewValue": null
+                },
+                "gcaUsability": {
+                    "hebrewValue": "אין",
+                    "code": 4
+                },
+                "ilsUsability": {
+                    "hebrewValue": "שמיש",
+                    "code": 1
+                },
+                "tacanUsability": {
+                    "hebrewValue": "מוגבל",
+                    "code": 2
+                },
+                "vorUsability": {
+                    "hebrewValue": "לא שמיש",
+                    "code": 3
+                },
+                "ndbUsability": {
+                    "hebrewValue": "אין",
+                    "code": 4
+                },
+                "weatherStatus": {
+                    "cloudCover": {
+                        "hebrewValue": "0/8"
+                    },
+                    "cloudBase": null,
+                    "cloudCeiling": null,
+                    "visibility": 10000,
+                    "windDirection": 220,
+                    "windStrength": 15,
+                    "temperature": 17,
+                    "humidity": 47,
+                    "weatherStatus": {
+                        "hebrewValue": "ראיה"
+                    }
+                },
+                "barometricPressureData": {
+                    "inchPressure": 2988,
+                    "milibarPressure": 101185
+                }
+            },
+            {
+                "inChargeComplex": {
+                    "complexName": "1שם הבסיס"
+                },
+                "sefigaComment": null,
+                "lastUpdateTime": "זמן עדכון1",
+                "manatBarzelNumber": null,
+                "baseReadiness": {
+                    "hebrewValue": null
+                },
+                "gcaUsability": {
+                    "hebrewValue": "אין",
+                    "code": 4
+                },
+                "ilsUsability": {
+                    "hebrewValue": "שמיש",
+                    "code": 1
+                },
+                "tacanUsability": {
+                    "hebrewValue": "מוגבל",
+                    "code": 2
+                },
+                "vorUsability": {
+                    "hebrewValue": "לא שמיש",
+                    "code": 3
+                },
+                "ndbUsability": {
+                    "hebrewValue": "אין",
+                    "code": 4
+                },
+                "weatherStatus": {
+                    "cloudCover": {
+                        "hebrewValue": "0/8"
+                    },
+                    "cloudBase": null,
+                    "cloudCeiling": null,
+                    "visibility": 10000,
+                    "windDirection": 220,
+                    "windStrength": 15,
+                    "temperature": 17,
+                    "humidity": 47,
+                    "weatherStatus": {
+                        "hebrewValue": "ראיה"
+                    }
+                },
+                "barometricPressureData": {
+                    "inchPressure": 2988,
+                    "milibarPressure": 101185
+                }
+            },
+            {
+                "inChargeComplex": {
+                    "complexName": "1שם הבסיס"
+                },
+                "sefigaComment": null,
+                "lastUpdateTime": "זמן עדכון1",
+                "manatBarzelNumber": null,
+                "baseReadiness": {
+                    "hebrewValue": null
+                },
+                "gcaUsability": {
+                    "hebrewValue": "אין",
+                    "code": 4
+                },
+                "ilsUsability": {
+                    "hebrewValue": "שמיש",
+                    "code": 1
+                },
+                "tacanUsability": {
+                    "hebrewValue": "מוגבל",
+                    "code": 2
+                },
+                "vorUsability": {
+                    "hebrewValue": "לא שמיש",
+                    "code": 3
+                },
+                "ndbUsability": {
+                    "hebrewValue": "אין",
+                    "code": 4
+                },
+                "weatherStatus": {
+                    "cloudCover": {
+                        "hebrewValue": "0/8"
+                    },
+                    "cloudBase": null,
+                    "cloudCeiling": null,
+                    "visibility": 10000,
+                    "windDirection": 220,
+                    "windStrength": 15,
+                    "temperature": 17,
+                    "humidity": 47,
+                    "weatherStatus": {
+                        "hebrewValue": "ראיה"
+                    }
+                },
+                "barometricPressureData": {
+                    "inchPressure": 2988,
+                    "milibarPressure": 101185
+                }
+            },
+            {
+                "inChargeComplex": {
+                    "complexName": "5שם הבסיס"
+                },
+                "sefigaComment": null,
+                "lastUpdateTime": "זמן עדכון5",
+                "manatBarzelNumber": null,
+                "baseReadiness": {
+                    "hebrewValue": null
+                },
+                "gcaUsability": {
+                    "hebrewValue": "אין",
+                    "code": 4
+                },
+                "ilsUsability": {
+                    "hebrewValue": "שמיש",
+                    "code": 1
+                },
+                "tacanUsability": {
+                    "hebrewValue": "מוגבל",
+                    "code": 2
+                },
+                "vorUsability": {
+                    "hebrewValue": "לא שמיש",
+                    "code": 3
+                },
+                "ndbUsability": {
+                    "hebrewValue": "אין",
+                    "code": 4
+                },
+                "weatherStatus": {
+                    "cloudCover": {
+                        "hebrewValue": "0/8"
+                    },
+                    "cloudBase": null,
+                    "cloudCeiling": null,
+                    "visibility": 20000,
+                    "windDirection": 330,
+                    "windStrength": 14,
+                    "temperature": 15,
+                    "humidity": 41,
+                    "weatherStatus": {
+                        "hebrewValue": "ראיה"
+                    }
+                },
+                "barometricPressureData": {
+                    "inchPressure": 2988,
+                    "milibarPressure": 101185
+                }
             }
         ]
     }

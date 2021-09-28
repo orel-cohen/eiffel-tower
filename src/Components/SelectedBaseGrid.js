@@ -1,11 +1,14 @@
-import { Paper } from '@material-ui/core';
+import * as React from 'react';
 import { Typography, Grid } from '@mui/material';
 import { baseIcon, editIcon } from "../Assets";
-import * as React from 'react';
-import { DrawnInfo } from '.';
 import '../App.css';
 
-
+/**
+ * Display the selected base name
+ * @param {*} props 
+ * @returns 
+ * @author Orel Cohen
+ */
 function SelectedBaseGrid(props) {
     return (
         <Grid item container

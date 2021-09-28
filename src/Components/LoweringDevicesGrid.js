@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import '../App.css';
 import { Typography, Grid } from '@mui/material';
-import { LoweringDevice } from '.';
+import { LoweringDevice, ContentTitle } from '.';
 import { loweringDevices } from "../Assets";
 
 
@@ -9,6 +9,7 @@ import { loweringDevices } from "../Assets";
  * Represent status of lowering devices in entity
  * @param {Entity} props 
  * @returns 
+ * @author Orel Cohen
  */
 function LoweringDevicesGrid(props) {
     const [entity, setEntity] = useState(props.entity)
@@ -17,8 +18,6 @@ function LoweringDevicesGrid(props) {
     const [tacanUsability, setTacanUsability] = useState()
     const [vorUsability, setVorUsability] = useState()
     const [ndbUsability, setNdbUsability] = useState()
-
-
 
     useEffect(() => {
         console.log(props);
@@ -34,27 +33,22 @@ function LoweringDevicesGrid(props) {
         }
     })
 
-    
     if (entity) {
         return (
-            <Grid item container
+            <Grid container item
+                spacing={2}
                 xs={3}
                 direction="row-reverse"
                 justifyContent="flex-start"
-                alignItems="center">
+                alignItems="center"
+                >
+
+                <ContentTitle icon={loweringDevices} title="מכשירי הנמכה" />
     
-                <Grid container
+                <Grid container item
                     direction="row-reverse"
-                    justifyContent="flex-start"
-                    alignItems="center">
-                    <img src={loweringDevices} alt="loweringDevices" />
-                    <Typography fontSize={30} fontFamily='Heebo'>מכשירי הנמכה</Typography >
-                </Grid>
-    
-                <Grid container
-                    direction="row-reverse"
-                    justifyContent="space-around"
-                    alignItems="stretch"
+                    justifyContent="space-between"
+                    alignItems="flex-start"
                 >
                     <LoweringDevice
                         usability={gcaUsability}

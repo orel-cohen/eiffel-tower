@@ -30,6 +30,9 @@ export {default as RouteInfo} from './RouteInfo';
 export {default as DrawnInfo} from './DrawnInfo';
 export {default as PartialWeatherStatus} from './PartialWeatherStatus';
 export {default as DividerItem} from './DividerItem';
+export {default as ContentTitle} from './ContentTitle';
+
+
 
 
 

@@ -1,16 +1,15 @@
 import * as React from 'react';
-import '../App.css';
 import { Typography, Grid } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import Paper from '@mui/material/Paper';
-
-
+import '../App.css';
 
 /**
- * Represent device, response to display device status 
+ * Represent device, responsible to display device status 
  * @param {Specific data on device} props 
  * @returns 
+ * @author Orel Cohen
  */
 function LoweringDevice(props) {
     const NONE = "אין"
@@ -21,27 +20,31 @@ function LoweringDevice(props) {
     function iconDetector(hebrewValue) {
         switch (hebrewValue) {
             case NONE:
-                return <CancelIcon color="disabled" />
+                return <CancelIcon fontSize='large' color="disabled" />
             case USABLE:
-                return <CheckCircleIcon color="success" />
+                return <CheckCircleIcon fontSize='large' color="success" />
             case NOT_USABLE:
-                return <CancelIcon color="error" />
+                return <CancelIcon fontSize='large' color="error" />
             case LIMITED:
-                return <CancelIcon color="disabled" />
+                return <CancelIcon fontSize='large' color="disabled" />
             default:
         }
     }
 
     return (
-
-        // style={{justifyContent: 'space-around', alignItems: 'center'}}
-        <Grid item>
-            <Paper
-                elevation={3}
-            // style={{height: 130, width: 90}}
-            >
-                {iconDetector(props.usability)}
-                <Typography>{props.title}</Typography>
+        <Grid item xs={2}>
+            <Paper elevation={3}>
+                <Grid container item
+                rowSpacing={2}
+                direction='column'
+                alignItems='center'>
+                    <Grid item>
+                        {iconDetector(props.usability)}
+                    </Grid>
+                    <Grid item>
+                        <Typography fontFamily='Heebo' fontSize='1.5rem'>{props.title}</Typography>
+                    </Grid>
+                </Grid>
             </Paper>
         </Grid>
 

@@ -1,60 +1,34 @@
-import { Paper } from '@material-ui/core';
-import { Typography, Grid } from '@mui/material';
 import * as React from 'react';
+import { Typography, Grid } from '@mui/material';
 import '../App.css';
 
-
+/**
+ * Represent icon and data info as a pair
+ * @param {direction, icon, info} props 
+ * @returns 
+ * @author Orel Cohen
+ */
 function DrawnInfo(props) {
     return (
         <Grid container item
             spacing={2}
             direction={props.direction ? props.direction : "column"}
-            // justifyContent="space-around"
             alignItems="center">
-            <Grid item>
 
+            <Grid item>
                 <img src={props.icon} alt={props.icon} />
             </Grid>
             <Grid item>
-
                 <Typography
                     align='center'
-                    style={props.infoStyle}
-                >
-
-                    {props.info ? props.info : "-"}
+                    fontFamily='Heebo'
+                    style={props.infoStyle}>
+                    {props.info ? props.info : "ללא נתונים"}
                 </Typography>
             </Grid>
 
         </Grid>
-        // <div>
-        //     <img src={props.icon} alt={props.icon}/>
-        //     <Typography
-        //         align='center'
-        //         style={props.infoStyle}>
-
-        //         {props.info}
-        //     </Typography>
-        // </div>
     );
 }
 
 export default DrawnInfo;
-
-
-
-// <Grid container
-//             direction={props.direction ? props.direction : "column"}
-//             justifyContent="space-around"
-//             alignItems="center">
-
-//             <img src={props.icon} alt={props.icon} />
-//             <Typography
-//                 align='center'
-//                 style={props.infoStyle}
-//                 >
-
-//                 {props.info}
-//             </Typography>
-
-//         </Grid>

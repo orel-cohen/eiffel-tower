@@ -10,6 +10,7 @@ import '../App.css';
  * and display it depending on parent component
  * @param {Entity - use just in WeatherStatus member} props Route info from entity
  * @returns 
+ * @author Orel Cohen
  * @todo Parse entity from props to useState member and set info in comp
  */
 function PartialWeatherStatus(props) {
